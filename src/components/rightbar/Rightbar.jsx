@@ -1,5 +1,6 @@
 import "./rightbar.css"
-
+import { Users} from "../../dummyData";
+import Online from "../online/Online";
 export default function Rightbar() {
   return (
     <div className="rightbar">
@@ -13,34 +14,9 @@ export default function Rightbar() {
         <img className="rightBarAd" src="/assets/ad.png" alt="" />
         <h4 className="rigtbarTitle">Online Friends</h4>
         <ul className="rightbarFriendList">
-          <li className="rigtbarFriend">
-            <div className="rightbarProgileImgContainer">
-              <img src="assets/person/3.jpeg" alt="" className="rightbarProfileImg" />
-              <span className="rightbarOnline"></span>
-            </div>
-            <span className="rightbarUserName">John Carter</span>
-          </li>
-          <li className="rigtbarFriend">
-            <div className="rightbarProgileImgContainer">
-              <img src="assets/person/3.jpeg" alt="" className="rightbarProfileImg" />
-              <span className="rightbarOnline"></span>
-            </div>
-            <span className="rightbarUserName">John Carter</span>
-          </li>
-          <li className="rigtbarFriend">
-            <div className="rightbarProgileImgContainer">
-              <img src="assets/person/3.jpeg" alt="" className="rightbarProfileImg" />
-              <span className="rightbarOnline"></span>
-            </div>
-            <span className="rightbarUserName">John Carter</span>
-          </li>
-          <li className="rigtbarFriend">
-            <div className="rightbarProgileImgContainer">
-              <img src="assets/person/3.jpeg" alt="" className="rightbarProfileImg" />
-              <span className="rightbarOnline"></span>
-            </div>
-            <span className="rightbarUserName">John Carter</span>
-          </li>
+          {Users.map(u=>(
+            <Online key={u.id} user={u}/>
+          ))}
         </ul>
       </div>      
     </div>
